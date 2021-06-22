@@ -1,0 +1,125 @@
+/* Project Setup */
+input:focus {
+    box-shadow: none !important;
+}
+
+body {
+    background: #F8F7FC;
+    padding: 30px;
+}
+
+.project-wrapper {
+    position: relative;
+    display: block;
+    width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.project-wrapper .header,
+.project-wrapper .footer {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .05), 0 1px 2px rgba(0, 0, 0, .15);
+    margin-bottom: 40px;
+}
+
+.project-wrapper .footer {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+}
+
+@media only screen and (max-width: 760px)
+{
+    body {
+        padding: 20px;
+    }
+    .project-wrapper {
+        width: 100%;
+    }
+}
+
+.mb-6 {
+    margin-bottom: 30px;
+}
+
+
+
+
+
+/* Project Main Code */
+.add-task-input {
+    padding: 10px 16px;
+}
+.add-btn {
+    padding: 10px;
+}
+
+.todo-item {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 8px 12px 8px 18px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .05), 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+.todo-item .status {
+    width: 7%;
+}
+.todo-item .todo-title {
+    width: 70%;
+}
+.todo-item .action-btn {
+    width: 22%;
+}
+
+.todo-item .action-btn button {
+    padding: 7px;
+    background-color: #fff;
+    border: none;
+}
+.todo-item .action-btn .edit:hover {
+    color: #12C0D5;
+}
+.todo-item .action-btn .save:hover {
+    color: #28C76F;
+}
+.todo-item .action-btn .delete:hover {
+    color: #FF4545;
+}
+
+
+.todo-item .edit { display: inline-block; }
+.todo-item .text { display: inline-block; }
+.todo-item .form-control { display: none; }
+.todo-item .save { display: none; }
+
+
+.edit-able .edit { display: none; }
+.edit-able .text { display: none; }
+.edit-able .form-control { display: inline-block; }
+.edit-able .save { display: inline-block; }
+
+
+
+@media only screen and (max-width: 700px)
+{
+    .todo-item .status {
+        width: 7%;
+    }
+    .todo-item .todo-title {
+        width: 66%;
+    }
+    .todo-item .action-btn {
+        width: 27%;
+    }
+}

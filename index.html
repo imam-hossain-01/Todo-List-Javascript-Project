@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta Tag -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title></title>
+
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="__assets/lib/@bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__assets/lib/@icon-bootstrap/bootstrap-icons.css">
+    <link rel="stylesheet" href="__assets/css/todo.css">
+
+</head>
+<body>
+
+
+    <div class="project-wrapper">
+
+        <!-- Project Header -->
+        <div class="header mb-5">Todo List Project</div>
+
+
+        <!-- Project Main Section -->
+        <div class="row mb-5">
+            <div class="col-sm-10 offset-sm-1">
+                
+                <!-- Add Todo List -->
+                <form class="mb-6" id="add-todo">
+        
+                    <div class="row g-3">
+                        <div class="col-10">
+                            <input type="text" class="form-control add-task-input" id="task" placeholder="Todo Description">
+                        </div>
+                        <div class="col-2">
+                            <div class="d-grid">
+                                <button class="btn btn-primary add-btn" type="submit">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+                <h6 class="mb-3">Active Task</h6>
+                <div class="todo-list active-todo mb-6"></div>
+
+                <h6 class="mb-3">Completed Task</h6>
+                <div class="todo-list complete-todo"></div>
+
+            </div>
+        </div>
+
+        <!-- Project Footer -->
+        <div class="footer d-flex justify-content-between">
+            <span>MD Imam Hossain</span>
+            <a href="https://github.com/mdimamhossain0049">GitHub</a>
+        </div>
+
+    </div>
+    
+
+    <!-- External JS File -->
+    <script src="__assets/lib/@jquery/jquery.js"></script>
+    <script src="__assets/lib/@bootstrap/js/bootstrap.min.js"></script>
+    <script src="__assets/js/todo.js"></script>
+
+    <script>
+        // Script Code Here
+    </script>
+    
+</body>
+</html>
