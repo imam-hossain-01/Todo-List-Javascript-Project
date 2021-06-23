@@ -21,17 +21,17 @@ let completeTask = document.getElementsByClassName('complete-todo')[0];
 // Set Local Storage
 let storageInit = function()
 {
-    let getStorage = JSON.parse(localStorage.getItem('user'));
+    let getStorage = JSON.parse(localStorage.getItem('todo'));
     if(!getStorage)
     {
-        localStorage.setItem('user', JSON.stringify([]));
+        localStorage.setItem('todo', JSON.stringify([]));
     }
 }
 
 // Print Data
 let printData = function()
 {
-    let data = JSON.parse(localStorage.getItem('user'));
+    let data = JSON.parse(localStorage.getItem('todo'));
     activeTask.innerHTML = '';
     completeTask.innerHTML = '';
     
@@ -83,7 +83,7 @@ let addEvent = function()
 // Generate Task Id
 let generateTaskId = function()
 {
-    let data = JSON.parse(localStorage.getItem('user'));
+    let data = JSON.parse(localStorage.getItem('todo'));
     let taskId = data.length + 1;
     return taskId;
 }
@@ -98,14 +98,14 @@ let addTodo = function(e)
     let taskStatus = 0;
     let taskData = [];
     let newData = {id:taskId, task:taskText, status:taskStatus};
-    let getData = JSON.parse(localStorage.getItem('user'));
+    let getData = JSON.parse(localStorage.getItem('todo'));
 
     for(let i of getData){
         taskData.push(i);
     }
 
     taskData.push(newData);
-    localStorage.setItem('user', JSON.stringify(taskData));
+    localStorage.setItem('todo', JSON.stringify(taskData));
     document.getElementById('task').value = '';
     printData();
 }
@@ -114,7 +114,7 @@ let addTodo = function(e)
 let updateStatus = function()
 {
     let taskId = this.parentElement.parentElement.getAttribute('data-id');
-    let getData = JSON.parse(localStorage.getItem('user'));
+    let getData = JSON.parse(localStorage.getItem('todo'));
     let taskData = [];
     let taskStatus = this.checked == true ? 1 : 0;
 
@@ -129,7 +129,7 @@ let updateStatus = function()
         }
     }
 
-    localStorage.setItem('user', JSON.stringify(taskData));
+    localStorage.setItem('todo', JSON.stringify(taskData));
     printData();
 }
 
@@ -143,7 +143,7 @@ let saveItem = function()
     this.parentElement.parentElement.classList.remove('edit-able');
     let taskId = this.parentElement.parentElement.getAttribute('data-id');
     let newTaskValue = this.parentElement.parentElement.querySelector('.task-input').value;
-    let getData = JSON.parse(localStorage.getItem('user'));
+    let getData = JSON.parse(localStorage.getItem('todo'));
     let taskData = [];
 
     for(let i of getData){
@@ -157,7 +157,7 @@ let saveItem = function()
         }
     }
 
-    localStorage.setItem('user', JSON.stringify(taskData));
+    localStorage.setItem('todo', JSON.stringify(taskData));
     printData();
 }
 
@@ -165,7 +165,7 @@ let saveItem = function()
 let deleteItem = function()
 {
     let taskId = this.parentElement.parentElement.getAttribute('data-id');
-    let getData = JSON.parse(localStorage.getItem('user'));
+    let getData = JSON.parse(localStorage.getItem('todo'));
     let taskData = [];
 
     for(let i of getData){
@@ -183,7 +183,7 @@ let deleteItem = function()
         }
     }
 
-    localStorage.setItem('user', JSON.stringify(taskData));
+    localStorage.setItem('todo', JSON.stringify(taskData));
     printData();
 }
 
